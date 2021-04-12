@@ -15,20 +15,17 @@
  * limitations under the License.
  */
 
-package org.apache.fontbox;
-
-import java.io.IOException;
-import org.apache.fontbox.encoding.Encoding;
+package org.apache.fontbox.ttf;
 
 /**
- * A PostScript font which uses an encoding vector.
- *
- * @author John Hewson
+ * OpenType Layout (OTL) table. Uses the OpenType Layout Common Table Format.
  */
-public interface EncodedFont
+public class OTLTable extends TTFTable
 {
-    /**
-     * Returns the PostScript Encoding vector for the font.
-     */
-    Encoding getEncoding() throws IOException;
+    // todo: this is a stub, a full implementation is needed
+    
+    OTLTable(TrueTypeFont font)
+    {
+        super(font);
+    }
 }

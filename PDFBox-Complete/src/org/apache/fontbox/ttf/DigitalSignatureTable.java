@@ -14,21 +14,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-package org.apache.fontbox;
-
-import java.io.IOException;
-import org.apache.fontbox.encoding.Encoding;
+package org.apache.fontbox.ttf;
 
 /**
- * A PostScript font which uses an encoding vector.
- *
- * @author John Hewson
+ * A table in a true type font.
+ * 
+ * @author Ben Litchfield
  */
-public interface EncodedFont
+public class DigitalSignatureTable extends TTFTable
 {
     /**
-     * Returns the PostScript Encoding vector for the font.
+     * Tag to identify this table.
      */
-    Encoding getEncoding() throws IOException;
+    public static final String TAG = "DSIG";
+
+    DigitalSignatureTable(TrueTypeFont font)
+    {
+        super(font);
+    }
 }

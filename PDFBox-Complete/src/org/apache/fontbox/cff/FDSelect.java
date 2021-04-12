@@ -15,20 +15,26 @@
  * limitations under the License.
  */
 
-package org.apache.fontbox;
+package org.apache.fontbox.cff;
 
-import java.io.IOException;
-import org.apache.fontbox.encoding.Encoding;
-
-/**
- * A PostScript font which uses an encoding vector.
- *
- * @author John Hewson
- */
-public interface EncodedFont
+public abstract class FDSelect
 {
+    protected final CFFCIDFont owner;
+
     /**
-     * Returns the PostScript Encoding vector for the font.
+     * Constructor.
+     *
+     * @param owner the owner of the FDSelect data.
      */
-    Encoding getEncoding() throws IOException;
+    public FDSelect(CFFCIDFont owner)
+    {
+        this.owner = owner;
+    }
+
+    /**
+     * Returns the Font DICT index for the given GID.
+     * 
+     * @param gid GID
+     */
+    public abstract int getFDIndex(int gid);
 }

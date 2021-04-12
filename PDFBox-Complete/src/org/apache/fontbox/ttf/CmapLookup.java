@@ -14,21 +14,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.apache.fontbox.ttf;
 
-package org.apache.fontbox;
-
-import java.io.IOException;
-import org.apache.fontbox.encoding.Encoding;
+import java.util.List;
 
 /**
- * A PostScript font which uses an encoding vector.
+ * An interface that abstracts the cid &lt;-&gt; codepoint lookup functionality of cmap.
  *
- * @author John Hewson
+ * @author Aaron Madlon-Kay
  */
-public interface EncodedFont
+public interface CmapLookup
 {
+
     /**
-     * Returns the PostScript Encoding vector for the font.
+     * Returns the GlyphId linked with the given character code.
+     *
+     * @param codePointAt the given character code to be mapped
+     * @return glyphId the corresponding glyph id for the given character code
      */
-    Encoding getEncoding() throws IOException;
+    int getGlyphId(int codePointAt);
+
+    /**
+     * Returns all possible character codes for the given gid, or null if there is none.
+     *
+     * @param gid glyph id
+     * @return a list with all character codes the given gid maps to
+     */
+    List<Integer> getCharCodes(int gid);
+
 }
