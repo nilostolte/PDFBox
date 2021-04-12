@@ -3,14 +3,13 @@ package org.bouncycastle.jce;
 import java.util.Enumeration;
 
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
-import org.bouncycastle.asn1.cryptopro.ECGOST3410NamedCurves;
 import org.bouncycastle.asn1.x9.X9ECParameters;
 import org.bouncycastle.jce.spec.ECNamedCurveParameterSpec;
 
 /**
  * a table of locally supported named curves.
  */
-public class ECGOST3410NamedCurveTable
+public class ECNamedCurveTable
 {
     /**
      * return a parameter spec representing the passed in named
@@ -22,19 +21,35 @@ public class ECGOST3410NamedCurveTable
     public static ECNamedCurveParameterSpec getParameterSpec(
         String  name)
     {
-        X9ECParameters  ecP = ECGOST3410NamedCurves.getByNameX9(name);
+        X9ECParameters  ecP = org.bouncycastle.crypto.ec.CustomNamedCurves.getByName(name);
         if (ecP == null)
         {
             try
             {
-                ecP = ECGOST3410NamedCurves.getByOIDX9(new ASN1ObjectIdentifier(name));
+                ecP = org.bouncycastle.crypto.ec.CustomNamedCurves.getByOID(new ASN1ObjectIdentifier(name));
             }
             catch (IllegalArgumentException e)
             {
-                return null; // not an oid.
+                // ignore - not an oid
+            }
+
+            if (ecP == null)
+            {
+                ecP = org.bouncycastle.asn1.x9.ECNamedCurveTable.getByName(name);
+                if (ecP == null)
+                {
+                    try
+                    {
+                        ecP = org.bouncycastle.asn1.x9.ECNamedCurveTable.getByOID(new ASN1ObjectIdentifier(name));
+                    }
+                    catch (IllegalArgumentException e)
+                    {
+                        // ignore - not an oid
+                    }
+                }
             }
         }
-        
+
         if (ecP == null)
         {
             return null;
@@ -56,6 +71,6 @@ public class ECGOST3410NamedCurveTable
      */
     public static Enumeration getNames()
     {
-        return ECGOST3410NamedCurves.getNames();
+        return org.bouncycastle.asn1.x9.ECNamedCurveTable.getNames();
     }
 }
