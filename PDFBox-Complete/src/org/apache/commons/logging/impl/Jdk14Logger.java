@@ -20,36 +20,20 @@ package org.apache.commons.logging.impl;
 import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.logging.LogRecord;
-import java.util.StringTokenizer;
-import java.io.PrintWriter;
-import java.io.StringWriter;
 
 import org.apache.commons.logging.Log;
 
 /**
  * Implementation of the <code>org.apache.commons.logging.Log</code>
- * interface that wraps the standard JDK logging mechanisms that are
- * available in SourceForge's Lumberjack for JDKs prior to 1.4.
+ * interface that wraps the standard JDK logging mechanisms that were
+ * introduced in the Merlin release (JDK 1.4).
  *
- * @version $Id: Jdk13LumberjackLogger.java 1432663 2013-01-13 17:24:18Z tn $
- * @since 1.1
+ * @version $Id: Jdk14Logger.java 1448063 2013-02-20 10:01:41Z tn $
  */
-public class Jdk13LumberjackLogger implements Log, Serializable {
+public class Jdk14Logger implements Log, Serializable {
 
     /** Serializable version identifier. */
-    private static final long serialVersionUID = -8649807923527610591L;
-
-    // ----------------------------------------------------- Instance Variables
-
-    /**
-     * The underlying Logger implementation we are using.
-     */
-    protected transient Logger logger = null;
-    protected String name = null;
-    private String sourceClassName = "unknown";
-    private String sourceMethodName = "unknown";
-    private boolean classAndMethodFound = false;
+    private static final long serialVersionUID = 4784713551416303804L;
 
     /**
      * This member variable simply ensures that any attempt to initialise
@@ -66,61 +50,48 @@ public class Jdk13LumberjackLogger implements Log, Serializable {
      *
      * @param name Name of the logger to be constructed
      */
-    public Jdk13LumberjackLogger(String name) {
+    public Jdk14Logger(String name) {
         this.name = name;
         logger = getLogger();
     }
 
-    // --------------------------------------------------------- Public Methods
-
-    private void log( Level level, String msg, Throwable ex ) {
-        if( getLogger().isLoggable(level) ) {
-            LogRecord record = new LogRecord(level, msg);
-            if( !classAndMethodFound ) {
-                getClassAndMethod();
-            }
-            record.setSourceClassName(sourceClassName);
-            record.setSourceMethodName(sourceMethodName);
-            if( ex != null ) {
-                record.setThrown(ex);
-            }
-            getLogger().log(record);
-        }
-    }
+    // ----------------------------------------------------- Instance Variables
 
     /**
-     * Gets the class and method by looking at the stack trace for the
-     * first entry that is not this class.
+     * The underlying Logger implementation we are using.
      */
-    private void getClassAndMethod() {
-        try {
-            Throwable throwable = new Throwable();
-            throwable.fillInStackTrace();
-            StringWriter stringWriter = new StringWriter();
-            PrintWriter printWriter = new PrintWriter( stringWriter );
-            throwable.printStackTrace( printWriter );
-            String traceString = stringWriter.getBuffer().toString();
-            StringTokenizer tokenizer =
-                new StringTokenizer( traceString, "\n" );
-            tokenizer.nextToken();
-            String line = tokenizer.nextToken();
-            while ( line.indexOf( this.getClass().getName() )  == -1 ) {
-                line = tokenizer.nextToken();
+    protected transient Logger logger = null;
+
+    /**
+     * The name of the logger we are wrapping.
+     */
+    protected String name = null;
+
+    // --------------------------------------------------------- Protected Methods
+
+    protected void log( Level level, String msg, Throwable ex ) {
+        Logger logger = getLogger();
+        if (logger.isLoggable(level)) {
+            // Hack (?) to get the stack trace.
+            Throwable dummyException = new Throwable();
+            StackTraceElement locations[] = dummyException.getStackTrace();
+            // LOGGING-132: use the provided logger name instead of the class name
+            String cname = name;
+            String method = "unknown";
+            // Caller will be the third element
+            if( locations != null && locations.length > 2 ) {
+                StackTraceElement caller = locations[2];
+                method = caller.getMethodName();
             }
-            while ( line.indexOf( this.getClass().getName() ) >= 0 ) {
-                line = tokenizer.nextToken();
+            if( ex == null ) {
+                logger.logp( level, cname, method, msg );
+            } else {
+                logger.logp( level, cname, method, msg, ex );
             }
-            int start = line.indexOf( "at " ) + 3;
-            int end = line.indexOf( '(' );
-            String temp = line.substring( start, end );
-            int lastPeriod = temp.lastIndexOf( '.' );
-            sourceClassName = temp.substring( 0, lastPeriod );
-            sourceMethodName = temp.substring( lastPeriod + 1 );
-        } catch ( Exception ex ) {
-            // ignore - leave class and methodname unknown
         }
-        classAndMethodFound = true;
     }
+
+    // --------------------------------------------------------- Public Methods
 
     /**
      * Logs a message with <code>java.util.logging.Level.FINE</code>.
