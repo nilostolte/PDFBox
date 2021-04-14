@@ -6,9 +6,29 @@ The project in this repository offers several versions of [PDFBox](https://pdfbo
 
 ## Overview
 
-### Compiling Projects in Eclipse
+### Compiling Projects
 
-The advantage of these repositories is that no building software is necessary (no need for Maven). One can compile them using Eclipse for Java, for example. To do that, just create a new Java project in Eclipse and then copy all the files in the source code under the directory [**`src`**](https://github.com/nilostolte/PDFBox/tree/main/PDFBox-Complete/src)  to the directory **`src`** of your project. Then, just click on **"File > Refresh"** and Eclipse starts compiling the code. Once the code is compiled you can already run the examples. Whenever one refreshes a Workspace in Eclipse, whatever new `java` file found is compiled and the compiled file saved in the bin directory in a same package storage hierarchy as the source code. Whenever a file is not a java file, it is just copied from **`src`** to **`bin`**. This is basically what happens when using Eclipse. Any new Java file created is automatically compiled on the fly. This simplicity and all the help when typing new code is what makes the beauty of Eclipse IDE. Classes, Interfaces, Enums and even new packages can be automatically created by just right clicking in the package you want to create them and choosing `New`.
+The advantage of these repositories is that no building software is necessary (no need for Maven), thus one doesn't even need to be a programmer to compile and to run the examples. One can easily compile the contents of these repositories using Eclipse for Java, for example. 
+
+#### Compiling Using Eclipse
+
+To do that, just create a new Java project in Eclipse and then copy all the files in the source code under the directory [**`src`**](https://github.com/nilostolte/PDFBox/tree/main/PDFBox-Complete/src)  to the directory **`src`** of your project. Then, just click on **"File > Refresh"** and Eclipse starts compiling the code. Once the code is compiled you can already run the examples. Whenever one refreshes a Workspace in Eclipse, whatever new `java` file found is compiled and the compiled file saved in the bin directory in a same package storage hierarchy as the source code. Whenever a file is not a java file, it is just copied from **`src`** to **`bin`**. This is basically what happens when using Eclipse. Any new Java file created is automatically compiled on the fly. This simplicity and all the help when typing new code is what makes the beauty of Eclipse IDE. Classes, Interfaces, Enums and even new packages can be automatically created by just right clicking in the package you want to create them and choosing `New`.
+
+### Running the PDF Viewer
+
+PDFBox has a PDF file viewer at [**`org.apache.pdfbox.debugger.PDFDebugger.java`**](https://github.com/nilostolte/PDFBox/blob/main/PDFBox-Complete/src/org/apache/pdfbox/debugger/PDFDebugger.java). It is recommended to use this viewer when starting to deal with PDF files. In this viewer one can verify the internal structure, and visualize the contents of the PDF file in several formats, besides just rendering it. To execute this program while in Eclipse, just click at `PDFDebugger.java` and then click over the _play_ icon as indicated below:
+
+![image](https://user-images.githubusercontent.com/80269251/114735122-e0b71880-9d12-11eb-826f-43e53e2acc89.png)
+
+<br>
+
+Once the program opens, one needs to supply a PDF file by using the menu **"File > Open..."**, which just opens a standard window to browse the file wanted. Once the file is loaded it appears in this way:
+
+<br>
+
+![image](https://user-images.githubusercontent.com/80269251/114737155-bbc3a500-9d14-11eb-852f-d66571903d9f.png)
+
+
 
 ### Running the Examples
 
