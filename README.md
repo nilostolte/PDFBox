@@ -48,8 +48,13 @@ Once the program opens, one needs to supply a PDF file by using the menu **"File
 
 But the main feature of this viewer is the capability to visualize the real content of the PDF file. This is done by clicking at **"+"** on the left of the **Page** wanted and then clicking at **Contents**.
 
-![image](https://user-images.githubusercontent.com/80269251/114754550-b1aaa200-9d26-11eb-885e-7116b88c4f5f.png)
+<br>
 
+![image](https://user-images.githubusercontent.com/80269251/114755900-27633d80-9d28-11eb-983d-b93aeecaf2b3.png)
+
+<br>
+
+This allows **debugging** the file generated to see if it corresponds to what it was intended.
 
 ### Running the Examples
 
