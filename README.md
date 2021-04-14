@@ -1,18 +1,34 @@
 # PDFBox
 
-The [**Apache PDFBox library**](https://pdfbox.apache.org) is an open source Java tool for working with PDF documents. The Apache PDFBox library project allows creation of new PDF documents, manipulation of existing documents and the ability to extract content from documents. Apache PDFBox also includes several command-line utilities.
+The [**Apache PDFBox library**](https://pdfbox.apache.org) is an open source Java tool for working with PDF documents. The Apache PDFBox library project allows viewing PDF documents, creation of new PDF documents, manipulation of existing documents and the ability to extract content from documents. Apache PDFBox also includes several command-line utilities.
 
 The project in this repository offers several versions of [PDFBox](https://pdfbox.apache.org) **source code** that can be directly compiled with Eclipse without using Maven. The source code version used here is `pdfbox-2.0.23`. [The complete version](https://github.com/nilostolte/PDFBox/tree/main/PDFBox-Complete) (**PDFBox-Complete**) is a complete unmodified PDFBox with all packages. The other versions, which are in other repositories for convenience, are modified versions offering more capabilities and generally for more specific uses.
 
 ## Overview
 
-### Compiling Projects
+### Compiling Projects Using Eclipse
 
 The advantage of these repositories is that no building software is necessary (no need for Maven), thus one doesn't even need to be a programmer to compile and to run the examples. One can easily compile the contents of these repositories using Eclipse for Java, for example. 
 
-#### Compiling Using Eclipse
+#### Creating Workspaces 
 
-To do that, just create a new Java project in Eclipse and then copy all the files in the source code under the directory [**`src`**](https://github.com/nilostolte/PDFBox/tree/main/PDFBox-Complete/src)  to the directory **`src`** of your project. Then, just click on **"File > Refresh"** and Eclipse starts compiling the code. Once the code is compiled you can already run the examples. Whenever one refreshes a Workspace in Eclipse, whatever new `java` file found is compiled and the compiled file saved in the bin directory in a same package storage hierarchy as the source code. Whenever a file is not a java file, it is just copied from **`src`** to **`bin`**. This is basically what happens when using Eclipse. Any new Java file created is automatically compiled on the fly. This simplicity and all the help when typing new code is what makes the beauty of Eclipse IDE. Classes, Interfaces, Enums and even new packages can be automatically created by just right clicking in the package you want to create them and choosing `New`.
+When starting Eclipse it always asks for the path of the Workspace. A Workspace is just a directory where the projects are stored. It is highly recommended to put a complete path starting with the disk where one wants to store the projects. Although it is not very difficult to move a project from a place to another, it is easy to get lost if one has several workspaces in different disks or different paths. Putting several workspaces under the same directory is a good idea because it is easy to remember where they are, and it is also easier to make backups. It is recommended to maintain several workspaces instead of only one with all projects inside. If possible it is better to have one workspace per project, especially when it is a big project. One can have other small projects with the main project if they are fairly small and if they are tightly related to the main project. 
+
+#### Finding Files and Directories
+
+If one is willing to access the directory where the project or a package is located there is a very simple and easy way to do it in Eclipse. Just click at the file, project or package one is trying to see in the file system and then right-click choosing **"Properties"**. A window will open and by clicking in the indicated icon a Window explorer (if one is working on Windows) window  will open at the directory where it is located:
+
+<br>
+
+![image](https://user-images.githubusercontent.com/80269251/114750182-b28d0500-9d21-11eb-8db8-21c33ef48ff2.png)
+
+<br>
+
+In the example above one clicked at [**`src`**](https://github.com/nilostolte/PDFBox/tree/main/PDFBox-Complete/src), the root of the source files in Eclipse. Once the file explorer opens one can dismiss the Properties window.
+
+#### Compiling
+
+To do that, just create a new Java project in Eclipse (**"File > New > Java Project"**) and then copy all the files in the source code under the directory [**`src`**](https://github.com/nilostolte/PDFBox/tree/main/PDFBox-Complete/src) to the directory **`src`** of your project. Then, just click on **"File > Refresh"** and Eclipse starts compiling the code. Once the code is compiled you can already run the examples. Whenever one refreshes a Workspace in Eclipse, whatever new `java` file found is compiled and the compiled file is saved in the bin directory in a same package storage hierarchy as the source code. Whenever a file is not a java file, it is just copied from **`src`** to **`bin`**. This is basically what happens when using Eclipse. Any new Java file created is automatically compiled on the fly. This simplicity and all the help when typing new code is what makes the beauty of Eclipse IDE. Classes, Interfaces, Enums and even new packages can be automatically created by just right clicking in the package you want to create them and choosing `New`.
 
 ### Running the PDF Viewer
 
@@ -28,6 +44,11 @@ Once the program opens, one needs to supply a PDF file by using the menu **"File
 
 ![image](https://user-images.githubusercontent.com/80269251/114737155-bbc3a500-9d14-11eb-852f-d66571903d9f.png)
 
+<br>
+
+But the main feature of this viewer is the capability to visualize the real content of the PDF file. This is done by clicking at **"+"** on the left of the **Page** wanted and then clicking at **Contents**.
+
+![image](https://user-images.githubusercontent.com/80269251/114754550-b1aaa200-9d26-11eb-885e-7116b88c4f5f.png)
 
 
 ### Running the Examples
