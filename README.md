@@ -40,13 +40,13 @@ In the new opened window, one should type the name of the project and click on *
 **Figure 3** - Naming the project and clicking **Next**
 <br><br>
 
-One should then uncheck the box **"Create module-info.java file"** and click **Finish**. This is shown in **Fig.**&#160;**4**. It is expected to be able to see the hierarchy of the project. This is done by clicking the "***>***" on the left of the project name in the Package Explorer, as indicated in the step **&#9314;** of **Fig.**&#160;**4**.
+One should then uncheck the box **"Create module-info.java file"** and click **Finish**. This is shown in **Fig.**&#160;**4**. At some point it will be expected to be able to see the hierarchy of the project. This is allowed by clicking the "***>***" on the left of the project name in the Package Explorer, as indicated in the step **&#9314;** of **Fig.**&#160;**4**.
 
 ![image](https://user-images.githubusercontent.com/80269251/114929363-b09a7300-9e01-11eb-8662-a2cec64a09e1.png)
 **Figure 4** - **&#9312;** Uncheck the box, **&#9313;** Click **Finish**, **&#9314;** Expand hierarchy by clicking on ***>***
 <br><br>
 
-Finally, one should be able to see the hierarchy of the packages that are added to the project. This is done as indicated in **Fig.**&#160;**5**. 
+Finally, one should be able to see the hierarchy of the packages that are added to the project. This is set as indicated in **Fig.**&#160;**5**. 
 
 ![image](https://user-images.githubusercontent.com/80269251/114927719-c9098e00-9dff-11eb-95ab-c4ee332aaef3.png)
 **Figure 5** - Setting for showing package hierarchy by clicking "**&#x22EE; > Package Presentation > Hierarchical**"
