@@ -14,11 +14,11 @@ This is a complete unmodifed version of PDFBox that is ready for compilation and
 
 The advantage of these repositories is that no building software is necessary (no need for Maven), thus one doesn't even need to be a programmer to compile and to run the examples. One can easily compile the contents of these repositories using Eclipse for Java, for example. 
 
-#### Creating Workspaces 
+#### <ins>Creating Workspaces</ins>
 
 When starting Eclipse it always asks for the path of the Workspace. A Workspace is just a directory where the projects are stored. It is highly recommended to put a complete path starting with the disk where one wants to store the projects. Although it is not very difficult to move a project from a place to another, it is easy to get lost if one has several workspaces in different disks or different paths. Putting several workspaces under the same directory is a good idea because it is easy to remember where they are, and it is also easier to make backups. It is recommended to maintain several workspaces instead of only one with all projects inside. If possible it is better to have one workspace per project, especially when it is a big project. One can have other small projects with the main project if they are fairly small and if they are tightly related to the main project.
 
-#### Eclipse Welcome Tab
+#### <ins>Eclipse Welcome Tab</ins>
 
 After supplying the Workspace directory, when Eclipse opens, a **Welcome** tab shows up inside Eclipse frame. This can be overwhelming to beginners, since instead of explaining you how to use it, and particularly how to dismiss this tab, it proposes a series of options. It is easier to ignore this page and dismiss it by clicking twice on the **"Welcome"** tab as indicated in **Fig. 1**.
 
@@ -26,7 +26,7 @@ After supplying the Workspace directory, when Eclipse opens, a **Welcome** tab s
 **Figure 1** - Dismissing the **Welcome** tab
 <br><br>
 
-#### Creating a Project
+#### <ins>Creating a Project</ins>
 
 The standard way to create a new project in Eclipse is by clicking **"File > New > Java Project"** (or alternatively pressing **Alt-Shift-N** simultaneously). Just ignore the suggestions shown at the Welcome tab and inside the Package Explorer, and proceed as shown in **Fig.**&#160;**2**.
 
@@ -52,7 +52,7 @@ Finally, one should be able to see the hierarchy of the packages that are added 
 **Figure 5** - Setting for showing package hierarchy by clicking "**&#x22EE; > Package Presentation > Hierarchical**"
 <br><br>
 
-#### Finding Files and Directories
+#### <ins>Finding Files and Directories</ins>
 
 If one is willing to access the directory where the project, a package or a file is located, there is a very simple and easy way to do it in Eclipse. Just click at the file, project or package one is trying to see in the file system and then right-click choosing **"Properties"** (at the bottom of the menu). A window will open and by clicking the icon on the right, as indicated in **Fig. 6**, a Window explorer (if one is working on Windows) window  will open at the directory where it is located.
 
@@ -65,7 +65,7 @@ If one is willing to access the directory where the project, a package or a file
 
 In **Fig. 6**,  [**`src`**](https://github.com/nilostolte/PDFBox/tree/main/PDFBox-Complete/src) was clicked, the root of the source files in Eclipse. Once the file explorer opens one can dismiss the Properties window.
 
-#### Compiling
+#### <ins>Compiling</ins>
 
 After creating a new Java project in Eclipse (as shown in **Fig. 2**, **3**, **4** and **5**) and copying all the files in the source code under the directory [**`src`**](https://github.com/nilostolte/PDFBox/tree/main/PDFBox-Complete/src) to the directory **`src`** of your project, just click on the project name or **`src`**, and then on **"File > Refresh"**. Eclipse will then start to compile the code. Once the code is compiled you can already run the examples. Whenever a project is refreshed in Eclipse, whatever new `java` file found is compiled and the compiled file is saved in the **`bin`** directory in a same package storage hierarchy as the source code. Whenever a file is not a java file, it is just copied from **`src`** to **`bin`**. This is basically what happens when using Eclipse. Any new Java file created is automatically compiled on the fly. This simplicity and all the help when typing new code is what makes the beauty of Eclipse IDE. Classes, Interfaces, Enums and even new packages can be automatically created by just right clicking in the package you want to create them and choosing `New`.
 
@@ -102,7 +102,7 @@ This allows **debugging** the file generated to see if it corresponds to what it
 
 The examples are found in the package [**`org.apache.pdfbox.examples`**](https://github.com/nilostolte/PDFBox/tree/main/PDFBox-Complete/src/org/apache/pdfbox/examples). 
 
-#### Using Fonts
+#### <ins>Using Fonts</ins>
 
 When generating a PDF file from scratch, which contains text, the recommended example is [**`ShowTextWithPositioning.java`**](https://github.com/nilostolte/PDFBox/blob/main/PDFBox-Complete/src/org/apache/pdfbox/examples/pdmodel/ShowTextWithPositioning.java). 
 When using fonts, this example shows how to embed them in the PDF file. One can use either a font using an encoding vector (as seen with `PDTrueTypeFont.load`) or directly with the **GID** using **Type 0** fonts (as seen with `PDType0Font.load`). **Type 0** fonts are more convenient because one doesn't have to think about an encoding vector, and it can deal with UNICODE directly, if the character is provided in the font. The inconvenient is that each character in a string is stored in two bytes instead of just one byte in the PDF file. 
@@ -126,7 +126,7 @@ the result is much simpler and gains in readability. However, one can doubt of t
 
 With texts in English there will be high redundancy of `null` bytes in the first byte of the character which can be compacted using compression (simply reversing the `false` value of [this line](https://github.com/nilostolte/PDFBox/blob/b6143afc9fc01c0a3b1d0815cb556e224b5f3bde/PDFBox-Complete/src/org/apache/pdfbox/examples/pdmodel/ShowTextWithPositioning.java#L74) to `true`, which allows compression of streams. Therefore, using compression, the use of **Type 0** fonts is almost unoticiable in the size of the file. However one looses a convenient feature demonstrated in the [**`ShowTextWithPositioning.java`**](https://github.com/nilostolte/PDFBox/blob/main/PDFBox-Complete/src/org/apache/pdfbox/examples/pdmodel/ShowTextWithPositioning.java), which is the use of **word spacing**, the `Tw` commands.
 
-##### GID
+##### <ins>GID</ins>
 
 **GID** is the **Glyph** identification number. If you are not sure what **GID** means you should download [Glyph Inspector](https://opentype.js.org/glyph-inspector.html) and [opentype.js](https://opentype.js.org/dist/opentype.js), placing `glyph-inspector.html` in some directory and putting `opentype.js` into the same directory under the subdirectory `dist`. In other words, if you copy `glyph-inspector.html` to the directory `test` your `opentype.js` should be at `test/dist`. Other files to put inside `test/dist` in order to make Glyph Inspector to work properly: [opentype.js.map](https://opentype.js.org/dist/opentype.js.map), [opentype.min.js](https://opentype.js.org/dist/opentype.min.js), [opentype.min.js.map](https://opentype.js.org/dist/opentype.min.js.map), [opentype.module.js](https://opentype.js.org/dist/opentype.module.js) and [opentype.module.js.map](https://opentype.js.org/dist/opentype.module.js.map).
 
