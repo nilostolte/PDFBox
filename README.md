@@ -4,6 +4,10 @@ The [**Apache PDFBox library**](https://pdfbox.apache.org) is an open source Jav
 
 The project in this repository offers several versions of [PDFBox](https://pdfbox.apache.org) **source code** that can be directly compiled with Eclipse without using Maven. The source code version used here is `pdfbox-2.0.23`. [The complete version](https://github.com/nilostolte/PDFBox/tree/main/PDFBox-Complete) (**PDFBox-Complete**) is a complete unmodified PDFBox with all packages. The other versions, which are in other repositories for convenience, are modified versions offering more capabilities and generally for more specific uses.
 
+## [PDFBox-Complete](https://github.com/nilostolte/PDFBox/tree/main/PDFBox-Complete)
+
+This is a complete unmodifed version of PDFBox that is ready for compilation and execution. It contains all necessary packages, where some of them are normally not included in PDFBox source code (Example: `org.bouncycastle`). If you are not using encryption, you can delete `bouncycastle` or simply not copy it to your project. However, you should also delete the examples that use it in order to compile the source code.
+
 ## Overview
 
 ### Compiling Projects Using Eclipse
@@ -16,20 +20,20 @@ When starting Eclipse it always asks for the path of the Workspace. A Workspace 
 
 #### Finding Files and Directories
 
-If one is willing to access the directory where the project, a package or a file is located, there is a very simple and easy way to do it in Eclipse. Just click at the file, project or package one is trying to see in the file system and then right-click choosing **"Properties"** (at the bottom of the menu). A window will open and by clicking in the indicated icon a Window explorer (if one is working on Windows) window  will open at the directory where it is located:
+If one is willing to access the directory where the project, a package or a file is located, there is a very simple and easy way to do it in Eclipse. Just click at the file, project or package one is trying to see in the file system and then right-click choosing **"Properties"** (at the bottom of the menu). A window will open and by clicking the icon on the right, as indicated in **Fig. 1**, a Window explorer (if one is working on Windows) window  will open at the directory where it is located.
 
 <br>
 
 ![image](https://user-images.githubusercontent.com/80269251/114750182-b28d0500-9d21-11eb-8db8-21c33ef48ff2.png)<br>
-**Figure 1** - Properties window. Where to click to open a file explorer window
+**Figure 1** - Properties window of directory  [**`src`**](https://github.com/nilostolte/PDFBox/tree/main/PDFBox-Complete/src). On the right, where to click to open a file explorer window
 
 <br>
 
-In the example above one clicked at [**`src`**](https://github.com/nilostolte/PDFBox/tree/main/PDFBox-Complete/src), the root of the source files in Eclipse. Once the file explorer opens one can dismiss the Properties window.
+In **Fig. 1**,  [**`src`**](https://github.com/nilostolte/PDFBox/tree/main/PDFBox-Complete/src) was clicked, the root of the source files in Eclipse. Once the file explorer opens one can dismiss the Properties window.
 
 #### Compiling
 
-To do that, just create a new Java project in Eclipse (**"File > New > Java Project"**) and then copy all the files in the source code under the directory [**`src`**](https://github.com/nilostolte/PDFBox/tree/main/PDFBox-Complete/src) to the directory **`src`** of your project. Then, just click on **"File > Refresh"** and Eclipse starts compiling the code. Once the code is compiled you can already run the examples. Whenever one refreshes a Workspace in Eclipse, whatever new `java` file found is compiled and the compiled file is saved in the bin directory in a same package storage hierarchy as the source code. Whenever a file is not a java file, it is just copied from **`src`** to **`bin`**. This is basically what happens when using Eclipse. Any new Java file created is automatically compiled on the fly. This simplicity and all the help when typing new code is what makes the beauty of Eclipse IDE. Classes, Interfaces, Enums and even new packages can be automatically created by just right clicking in the package you want to create them and choosing `New`.
+To do that, just create a new Java project in Eclipse (by clicking **"File > New > Java Project"**) and then copy all the files in the source code under the directory [**`src`**](https://github.com/nilostolte/PDFBox/tree/main/PDFBox-Complete/src) to the directory **`src`** of your project. Next, just click on the project or **`src`**, and then on **"File > Refresh"**. Eclipse will then start to compile the code. Once the code is compiled you can already run the examples. Whenever a project is refreshed in Eclipse, whatever new `java` file found is compiled and the compiled file is saved in the bin directory in a same package storage hierarchy as the source code. Whenever a file is not a java file, it is just copied from **`src`** to **`bin`**. This is basically what happens when using Eclipse. Any new Java file created is automatically compiled on the fly. This simplicity and all the help when typing new code is what makes the beauty of Eclipse IDE. Classes, Interfaces, Enums and even new packages can be automatically created by just right clicking in the package you want to create them and choosing `New`.
 
 ### Running the PDF Viewer
 
@@ -97,7 +101,3 @@ When running the program into a browser you will see the following screen:
 ![image](https://user-images.githubusercontent.com/80269251/114447261-315a3480-9ba0-11eb-9a75-b6c4bab86d2a.png)
 
 The **GID** is the number from 0 to 99 in the grid showing the glyphs of the font, but as one can easily notice the **GID** can go to much higher values, such as 1293 to this particular font. This value can potentially go until 32767.
-
-## [PDFBox-Complete](https://github.com/nilostolte/PDFBox/tree/main/PDFBox-Complete)
-
-This is a complete unmodifed version of PDFBox that is ready for compilation and execution. It contains all necessary packages, where some of them are normally not included in PDFBox source code (Example: `org.bouncycastle`). If you are not using encryption, you can delete `bouncycastle` or simply not copy it to your project. However, you should also delete the examples that use it in order to compile the source code.
