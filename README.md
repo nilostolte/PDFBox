@@ -27,16 +27,16 @@ After supplying the Workspace directory, when Eclipse opens, a welcome page show
 
 #### Finding Files and Directories
 
-If one is willing to access the directory where the project, a package or a file is located, there is a very simple and easy way to do it in Eclipse. Just click at the file, project or package one is trying to see in the file system and then right-click choosing **"Properties"** (at the bottom of the menu). A window will open and by clicking the icon on the right, as indicated in **Fig. 1**, a Window explorer (if one is working on Windows) window  will open at the directory where it is located.
+If one is willing to access the directory where the project, a package or a file is located, there is a very simple and easy way to do it in Eclipse. Just click at the file, project or package one is trying to see in the file system and then right-click choosing **"Properties"** (at the bottom of the menu). A window will open and by clicking the icon on the right, as indicated in **Fig. 2**, a Window explorer (if one is working on Windows) window  will open at the directory where it is located.
 
 <br>
 
 ![image](https://user-images.githubusercontent.com/80269251/114750182-b28d0500-9d21-11eb-8db8-21c33ef48ff2.png)<br>
-**Figure 1** - Properties window of directory  [**`src`**](https://github.com/nilostolte/PDFBox/tree/main/PDFBox-Complete/src). On the right, where to click to open a file explorer window
+**Figure 2** - Properties window of directory  [**`src`**](https://github.com/nilostolte/PDFBox/tree/main/PDFBox-Complete/src). On the right, where to click to open a file explorer window
 
 <br>
 
-In **Fig. 1**,  [**`src`**](https://github.com/nilostolte/PDFBox/tree/main/PDFBox-Complete/src) was clicked, the root of the source files in Eclipse. Once the file explorer opens one can dismiss the Properties window.
+In **Fig. 2**,  [**`src`**](https://github.com/nilostolte/PDFBox/tree/main/PDFBox-Complete/src) was clicked, the root of the source files in Eclipse. Once the file explorer opens one can dismiss the Properties window.
 
 #### Compiling
 
@@ -47,7 +47,7 @@ To do that, just create a new Java project in Eclipse (by clicking **"File > New
 PDFBox has a PDF file viewer at [**`org.apache.pdfbox.debugger.PDFDebugger.java`**](https://github.com/nilostolte/PDFBox/blob/main/PDFBox-Complete/src/org/apache/pdfbox/debugger/PDFDebugger.java). It is recommended to use this viewer when starting to deal with PDF files. In this viewer one can verify the internal structure, and visualize the contents of the PDF file in several formats, besides just rendering it. To execute this program while in Eclipse, just click at `PDFDebugger.java` and then click over the _play_ icon as indicated below:
 
 ![image](https://user-images.githubusercontent.com/80269251/114735122-e0b71880-9d12-11eb-826f-43e53e2acc89.png)<br>
-**Figure 2** - Running the PDF Viewer: 1) Select file [**PDFDebugger.java**](https://github.com/nilostolte/PDFBox/blob/main/PDFBox-Complete/src/org/apache/pdfbox/debugger/PDFDebugger.java) and 2) Click on **run**
+**Figure 3** - Running the PDF Viewer: 1) Select file [**PDFDebugger.java**](https://github.com/nilostolte/PDFBox/blob/main/PDFBox-Complete/src/org/apache/pdfbox/debugger/PDFDebugger.java) and 2) Click on **run**
 
 <br>
 
@@ -56,7 +56,7 @@ Once the program opens, one needs to supply a PDF file by using the menu **"File
 <br>
 
 ![image](https://user-images.githubusercontent.com/80269251/114737155-bbc3a500-9d14-11eb-852f-d66571903d9f.png)<br>
-**Figure 3** - PDF Viewer showing the rendering of the first page of athe file
+**Figure 4** - PDF Viewer showing the rendering of the first page of athe file
 
 <br>
 
@@ -65,7 +65,7 @@ But the main feature of this viewer is the capability to visualize the real cont
 <br>
 
 ![image](https://user-images.githubusercontent.com/80269251/114755900-27633d80-9d28-11eb-983d-b93aeecaf2b3.png)<br>
-**Figure 4** - PDF Viewer showing the contents of the first page of a file
+**Figure 5** - PDF Viewer showing the contents of the first page of a file
 
 <br>
 
@@ -79,22 +79,22 @@ The examples are found in the package [**`org.apache.pdfbox.examples`**](https:/
 
 When generating a PDF file from scratch, which contains text, the recommended example is [**`ShowTextWithPositioning.java`**](https://github.com/nilostolte/PDFBox/blob/main/PDFBox-Complete/src/org/apache/pdfbox/examples/pdmodel/ShowTextWithPositioning.java). 
 When using fonts, this example shows how to embed them in the PDF file. One can use either a font using an encoding vector (as seen with `PDTrueTypeFont.load`) or directly with the **GID** using **Type 0** fonts (as seen with `PDType0Font.load`). **Type 0** fonts are more convenient because one doesn't have to think about an encoding vector, and it can deal with UNICODE directly, if the character is provided in the font. The inconvenient is that each character in a string is stored in two bytes instead of just one byte in the PDF file. 
-This is illustrated by examining the PDF file generated by the example [**`ShowTextWithPositioning.java`**](https://github.com/nilostolte/PDFBox/blob/main/PDFBox-Complete/src/org/apache/pdfbox/examples/pdmodel/ShowTextWithPositioning.java). Its rendering is shown in **Fig. 5**, while visualizing the file with the PDF Viewer.
+This is illustrated by examining the PDF file generated by the example [**`ShowTextWithPositioning.java`**](https://github.com/nilostolte/PDFBox/blob/main/PDFBox-Complete/src/org/apache/pdfbox/examples/pdmodel/ShowTextWithPositioning.java). Its rendering is shown in **Fig. 6**, while visualizing the file with the PDF Viewer.
 
 ![image](https://user-images.githubusercontent.com/80269251/114762333-a314b880-9d2f-11eb-95f2-c4aef356ce37.png)<br>
-**Figure 5** - Rendering of file **justify-example.pdf** created by [`ShowTextWithPositioning.java`](https://github.com/nilostolte/PDFBox/blob/main/PDFBox-Complete/src/org/apache/pdfbox/examples/pdmodel/ShowTextWithPositioning.java)
+**Figure 6** - Rendering of file **justify-example.pdf** created by [`ShowTextWithPositioning.java`](https://github.com/nilostolte/PDFBox/blob/main/PDFBox-Complete/src/org/apache/pdfbox/examples/pdmodel/ShowTextWithPositioning.java)
 
 
-When examining the contents of the file in the PDF Viewer one can really grasp the differences in **Fig. 6**.
+When examining the contents of the file in the PDF Viewer one can really grasp the differences in **Fig. 7**.
 
 ![image](https://user-images.githubusercontent.com/80269251/114763729-2387e900-9d31-11eb-8bfd-3d75f008cca1.png)<br>
-**Figure 6** - Contents of file **justify-example.pdf** created by [**`ShowTextWithPositioning.java`**](https://github.com/nilostolte/PDFBox/blob/main/PDFBox-Complete/src/org/apache/pdfbox/examples/pdmodel/ShowTextWithPositioning.java)
+**Figure 7** - Contents of file **justify-example.pdf** created by [**`ShowTextWithPositioning.java`**](https://github.com/nilostolte/PDFBox/blob/main/PDFBox-Complete/src/org/apache/pdfbox/examples/pdmodel/ShowTextWithPositioning.java)
 
-In this example texts are positioned using a matrix (`Tm` commands as seen in **Fig. 6**). 
+In this example texts are positioned using a matrix (`Tm` commands as seen in **Fig. 7**). 
 However, this is quite cumbersome. If one needs to separate the next text with a custom space, it is better to use the `Td` command as shown in **Fig 4**. The `x` component of the `Td` command is just the space between the begining of the text before and the one that follows the `Td`, that is, it just translates to a distace x from the beginning of the previous text. The y component of `Td` command is just a zero, when translating in the same line. In PDFBox this command is generated when calling the function [`newLineAtOffset`](https://github.com/nilostolte/PDFBox/blob/a0618eb3c49c0ed660d1e16c5cf090bb96dc5a3c/PDFBox-Complete/src/org/apache/pdfbox/pdmodel/PDPageContentStream.java#L580) from the class [`PDPageContentStream`](https://github.com/nilostolte/PDFBox/blob/main/PDFBox-Complete/src/org/apache/pdfbox/pdmodel/PDPageContentStream.java).
 
 As seen in **Fig. 6**, the the second `Tw` command does not have any effect because of the use of **Type 0** fonts. This example is very useful, especially to show what one should not do when using **Type 0** fonts. Using a `TJ` command (the array version of `Tj` command) seems to be the best idea to justify texts with **Type 0** fonts. However, one can notice some details that are not that good: the white space is represented in the string (it has **GID** /000/003, or simply 3),  it occupies two bytes plus two parenthesis and an extra space, the widths separating the words are in character coordinate space (thus having many more digits), 
-it is always the same value (-3696.5562), and the negative sign not only occupies an extra byte, but it is also counterintuitive. In total, for separating two words using `TJ` as shown in this example, one needs 16 characters. The method we used in the file of **Fig. 3-4** takes 15 characters to separate two words, including the extra `Tj` command. This seems a bit more compact because spaces are not represented and displacements are smaller. In any case, 
+it is always the same value (-3696.5562), and the negative sign not only occupies an extra byte, but it is also counterintuitive. In total, for separating two words using `TJ` as shown in this example, one needs 16 characters. The method we used in the file of **Fig. 4** and **5** takes 15 characters to separate two words, including the extra `Tj` command. This seems a bit more compact because spaces are not represented and displacements are smaller. In any case, 
 the result is much more simpler and gains in readability. Howver, one can doubt of the usefulness of using **Type 0** fonts at all because strings in these fonts take twice as much bytes, but, again, there are more tricks that can be used.
 
 With texts in English there will be high redundancy of `null` bytes in the first byte of the character which can be compacted using compression (simply reversing the `false` value of [this line](https://github.com/nilostolte/PDFBox/blob/b6143afc9fc01c0a3b1d0815cb556e224b5f3bde/PDFBox-Complete/src/org/apache/pdfbox/examples/pdmodel/ShowTextWithPositioning.java#L74) to `true`, which allows compression of streams. Therefore, using compression, the use of **Type 0** fonts is almost unoticiable in the size of the file. However one looses a convenient feature demonstrated in the [**`ShowTextWithPositioning.java`**](https://github.com/nilostolte/PDFBox/blob/main/PDFBox-Complete/src/org/apache/pdfbox/examples/pdmodel/ShowTextWithPositioning.java), which is the use of **word spacing**, the `Tw` commands.
