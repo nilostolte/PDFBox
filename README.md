@@ -16,7 +16,14 @@ The advantage of these repositories is that no building software is necessary (n
 
 #### Creating Workspaces 
 
-When starting Eclipse it always asks for the path of the Workspace. A Workspace is just a directory where the projects are stored. It is highly recommended to put a complete path starting with the disk where one wants to store the projects. Although it is not very difficult to move a project from a place to another, it is easy to get lost if one has several workspaces in different disks or different paths. Putting several workspaces under the same directory is a good idea because it is easy to remember where they are, and it is also easier to make backups. It is recommended to maintain several workspaces instead of only one with all projects inside. If possible it is better to have one workspace per project, especially when it is a big project. One can have other small projects with the main project if they are fairly small and if they are tightly related to the main project. 
+When starting Eclipse it always asks for the path of the Workspace. A Workspace is just a directory where the projects are stored. It is highly recommended to put a complete path starting with the disk where one wants to store the projects. Although it is not very difficult to move a project from a place to another, it is easy to get lost if one has several workspaces in different disks or different paths. Putting several workspaces under the same directory is a good idea because it is easy to remember where they are, and it is also easier to make backups. It is recommended to maintain several workspaces instead of only one with all projects inside. If possible it is better to have one workspace per project, especially when it is a big project. One can have other small projects with the main project if they are fairly small and if they are tightly related to the main project.
+
+#### Eclipse Welcome Page
+
+After supplying the Workspace directory, when Eclipse opens, a welcome page shows up inside Eclipse frame. This can be overwhelming to beginners, since instead of explaining you how to use it, and particularly how to dismiss this page, it proposes a series of options. It is easier to ignore this page and dismiss it by clicking twice on the **"Welcome"** tab as indicated in **Fig. 1**.
+
+![image](https://user-images.githubusercontent.com/80269251/114900322-c26c1e00-9de1-11eb-85df-ec175c466cd3.png)
+**Figure 1** - Dismissing the Welcome page
 
 #### Finding Files and Directories
 
@@ -33,7 +40,7 @@ In **Fig. 1**,  [**`src`**](https://github.com/nilostolte/PDFBox/tree/main/PDFBo
 
 #### Compiling
 
-To do that, just create a new Java project in Eclipse (by clicking **"File > New > Java Project"**) and then copy all the files in the source code under the directory [**`src`**](https://github.com/nilostolte/PDFBox/tree/main/PDFBox-Complete/src) to the directory **`src`** of your project. Next, just click on the project or **`src`**, and then on **"File > Refresh"**. Eclipse will then start to compile the code. Once the code is compiled you can already run the examples. Whenever a project is refreshed in Eclipse, whatever new `java` file found is compiled and the compiled file is saved in the bin directory in a same package storage hierarchy as the source code. Whenever a file is not a java file, it is just copied from **`src`** to **`bin`**. This is basically what happens when using Eclipse. Any new Java file created is automatically compiled on the fly. This simplicity and all the help when typing new code is what makes the beauty of Eclipse IDE. Classes, Interfaces, Enums and even new packages can be automatically created by just right clicking in the package you want to create them and choosing `New`.
+To do that, just create a new Java project in Eclipse (by clicking **"File > New > Java Project"**) and then copy all the files in the source code under the directory [**`src`**](https://github.com/nilostolte/PDFBox/tree/main/PDFBox-Complete/src) to the directory **`src`** of your project. Next, just click on the project or **`src`**, and then on **"File > Refresh"**. Eclipse will then start to compile the code. Once the code is compiled you can already run the examples. Whenever a project is refreshed in Eclipse, whatever new `java` file found is compiled and the compiled file is saved in the **`bin`** directory in a same package storage hierarchy as the source code. Whenever a file is not a java file, it is just copied from **`src`** to **`bin`**. This is basically what happens when using Eclipse. Any new Java file created is automatically compiled on the fly. This simplicity and all the help when typing new code is what makes the beauty of Eclipse IDE. Classes, Interfaces, Enums and even new packages can be automatically created by just right clicking in the package you want to create them and choosing `New`.
 
 ### Running the PDF Viewer
 
