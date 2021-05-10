@@ -83,7 +83,7 @@ Once the program opens, one needs to supply a PDF file by using the menu **"File
 <br>
 
 ![image](https://user-images.githubusercontent.com/80269251/114737155-bbc3a500-9d14-11eb-852f-d66571903d9f.png)<br>
-**Figure 8** - PDF Viewer showing the rendering of the first page of athe file
+**Figure 8** - PDF Viewer showing the rendering of the first page of the file
 
 <br>
 
@@ -96,7 +96,7 @@ But the main feature of this viewer is the capability to visualize the real cont
 
 <br>
 
-This allows **debugging** the file generated to see if it corresponds to what it was intended. The contents can be shown in the following formats: **"Nice view"** (which is the most convenient, but it may take some seconds to process - here characters in strings are represented in octal when they are not ASCII), **"Raw view"** (direct binary format after decompressing, but only ACII characters are represented), and **"Hex view"** (The binary content shown in hexadecimal notation).
+This allows **debugging** the file generated to see if it corresponds to what it was intended. The contents can be shown in the following formats: **"Nice view"** (which is the most convenient, but it may take some seconds to process - here characters in strings are represented in octal when they are not ASCII), **"Raw view"** (direct binary format after decompressing, but only ASCII characters are represented), and **"Hex view"** (The binary content shown in hexadecimal notation).
 
 ### Running the Examples
 
@@ -122,9 +122,9 @@ However, this is quite cumbersome. If one needs to separate the next text with a
 
 As seen in **Fig. 11**, the the second `Tw` command does not have any effect because of the use of **Type 0** fonts. This example is very useful, especially to show what one should not do when using **Type 0** fonts. Using a `TJ` command (the array version of `Tj` command) seems to be the best idea to justify texts with **Type 0** fonts. However, one can notice some details that are not that good: the white space is represented in the string (it has **GID** /000/003, or simply 3),  it occupies two bytes plus two parenthesis and an extra space, the widths separating the words are in character coordinate space (thus having many more digits), 
 it is always the same value (-3696.5562), and the negative sign not only occupies an extra byte, but it is also counterintuitive. In total, for separating two words using `TJ` as shown in this example, one needs 16 characters. The method we used in the file of **Fig. 8** and **9** takes 15 characters to separate two words, including the extra `Tj` command. This seems a bit more compact because spaces are not represented and displacements are smaller. In any case, 
-the result is much simpler and gains in readability. However, one can doubt of the usefulness of using **Type 0** fonts at all because strings in these fonts take twice as much bytes, but, again, there are more tricks that can be used.
+the result is much simpler and gains in readability. However, one can doubt of the usefulness of using **Type 0** fonts at all because strings in these fonts take twice as many bytes, but, again, there are more tricks that can be used.
 
-With texts in English there will be high redundancy of `null` bytes in the first byte of the character which can be compacted using compression (simply reversing the `false` value of [this line](https://github.com/nilostolte/PDFBox/blob/b6143afc9fc01c0a3b1d0815cb556e224b5f3bde/PDFBox-Complete/src/org/apache/pdfbox/examples/pdmodel/ShowTextWithPositioning.java#L74) to `true`, which allows compression of streams. Therefore, using compression, the use of **Type 0** fonts is almost unoticiable in the size of the file. However one looses a convenient feature demonstrated in the [**`ShowTextWithPositioning.java`**](https://github.com/nilostolte/PDFBox/blob/main/PDFBox-Complete/src/org/apache/pdfbox/examples/pdmodel/ShowTextWithPositioning.java), which is the use of **word spacing**, the `Tw` commands.
+With texts in English there will be high redundancy of `null` bytes in the first byte of the character which can be compacted using compression (simply reversing the `false` value of [this line](https://github.com/nilostolte/PDFBox/blob/b6143afc9fc01c0a3b1d0815cb556e224b5f3bde/PDFBox-Complete/src/org/apache/pdfbox/examples/pdmodel/ShowTextWithPositioning.java#L74) to `true`, which allows compression of streams). Therefore, using compression, the use of **Type 0** fonts is almost unoticiable in the size of the file. However one looses a convenient feature demonstrated in the [**`ShowTextWithPositioning.java`**](https://github.com/nilostolte/PDFBox/blob/main/PDFBox-Complete/src/org/apache/pdfbox/examples/pdmodel/ShowTextWithPositioning.java), which is the use of **word spacing**, the `Tw` commands.
 
 ##### <ins>GID</ins>
 
