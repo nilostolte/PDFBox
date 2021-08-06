@@ -14,21 +14,37 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.apache.fontbox.util;
 
-package org.apache.fontbox;
-
-import java.io.IOException;
-import org.apache.fontbox.encoding.Encoding;
+import java.nio.charset.Charset;
 
 /**
- * A PostScript font which uses an encoding vector.
- *
- * @author John Hewson
+ * This class provides an instance of all common charsets used to transform byte arrays into strings. 
+ *  
  */
-public interface EncodedFont
+public final class Charsets
 {
+    private Charsets() {}
+    
     /**
-     * Returns the PostScript Encoding vector for the font.
+     * ISO-8859-1 Charset
      */
-    Encoding getEncoding() throws IOException;
+    public static final Charset ISO_8859_1 = Charset.forName("ISO-8859-1");
+    /**
+     * UTF-16 Charset
+     */
+    public static final Charset UTF_16 = Charset.forName("UTF-16");
+    /**
+     * UTF-16BE Charset
+     */
+    public static final Charset UTF_16BE = Charset.forName("UTF-16BE");
+    /**
+     * US-ASCII Charset
+     */
+    public static final Charset US_ASCII = Charset.forName("US-ASCII");
+    /**
+     * ISO-10646 Charset
+     */
+    public static final Charset ISO_10646 = Charset.forName("ISO-10646-UCS-2");
+    
 }

@@ -15,20 +15,23 @@
  * limitations under the License.
  */
 
-package org.apache.fontbox;
+package org.apache.fontbox.type1;
 
+import org.apache.fontbox.cff.Type1CharString;
 import java.io.IOException;
-import org.apache.fontbox.encoding.Encoding;
 
 /**
- * A PostScript font which uses an encoding vector.
+ * Something which can read Type 1 CharStrings, namely Type 1 and CFF fonts.
  *
  * @author John Hewson
  */
-public interface EncodedFont
+public interface Type1CharStringReader
 {
     /**
-     * Returns the PostScript Encoding vector for the font.
+     * Returns the Type 1 CharString for the character with the given name.
+     *
+     * @return Type 1 CharString
+     * @throws IOException if something went wrong
      */
-    Encoding getEncoding() throws IOException;
+    Type1CharString getType1CharString(String name) throws IOException;
 }

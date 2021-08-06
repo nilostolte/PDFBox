@@ -15,20 +15,23 @@
  * limitations under the License.
  */
 
-package org.apache.fontbox;
+package org.apache.fontbox.util.autodetect;
 
-import java.io.IOException;
-import org.apache.fontbox.encoding.Encoding;
+import java.io.File;
+import java.util.List;
 
 /**
- * A PostScript font which uses an encoding vector.
+ * Implementers provide find method for searching native operating system for available fonts.
+ * This class is based on a class provided by Apache FOP.
  *
- * @author John Hewson
+ * See org.apache.fop.fonts.autodetect.FontDirFinder
  */
-public interface EncodedFont
+public interface FontDirFinder
 {
     /**
-     * Returns the PostScript Encoding vector for the font.
+     * Finds a list of font files.
+     * 
+     * @return list of font files.
      */
-    Encoding getEncoding() throws IOException;
+    List<File> find();
 }

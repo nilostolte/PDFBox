@@ -15,20 +15,27 @@
  * limitations under the License.
  */
 
-package org.apache.fontbox;
-
-import java.io.IOException;
-import org.apache.fontbox.encoding.Encoding;
+package org.apache.fontbox.util.autodetect;
 
 /**
- * A PostScript font which uses an encoding vector.
- *
- * @author John Hewson
+ * Mac font directory finder. This class is based on a class provided by Apache FOP. see
+ * org.apache.fop.fonts.autodetect.MacFontDirFinder
  */
-public interface EncodedFont
+public class MacFontDirFinder extends NativeFontDirFinder
 {
+
     /**
-     * Returns the PostScript Encoding vector for the font.
+     * Some guesses at possible unix font directory locations.
+     * 
+     * @return a array of possible font directory locations
      */
-    Encoding getEncoding() throws IOException;
+    @Override
+    protected String[] getSearchableDirectories()
+    {
+        return new String[] { System.getProperty("user.home") + "/Library/Fonts/", // user
+                "/Library/Fonts/", // local
+                "/System/Library/Fonts/", // system
+                "/Network/Library/Fonts/" // network
+        };
+    }
 }

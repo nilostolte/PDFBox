@@ -15,20 +15,19 @@
  * limitations under the License.
  */
 
-package org.apache.fontbox;
+package org.apache.fontbox.type1;
 
 import java.io.IOException;
-import org.apache.fontbox.encoding.Encoding;
 
 /**
- * A PostScript font which uses an encoding vector.
+ * Thrown when a font is damaged and cannot be read.
  *
  * @author John Hewson
  */
-public interface EncodedFont
+public class DamagedFontException extends IOException
 {
-    /**
-     * Returns the PostScript Encoding vector for the font.
-     */
-    Encoding getEncoding() throws IOException;
+    public DamagedFontException(String message)
+    {
+        super(message);
+    }
 }
