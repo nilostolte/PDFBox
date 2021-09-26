@@ -6,7 +6,7 @@ The project in this repository offers several versions of [PDFBox](https://pdfbo
 
 ## [PDFBox-Compact](https://github.com/nilostolte/PDFBox/tree/main/PDFBoxCompact)
 
-This is a compact version of PDFBox that is ready for compilation and execution. It contains new packages, notably to produce formateed PDF files from text files.
+This is a compact version of PDFBox that is ready for compilation and execution. It contains new packages, notably to produce formateed PDF files from text files (see [ShowJustifiedFormattedBook](https://github.com/nilostolte/PDFBox/blob/main/PDFBoxCompact/src/org/apache/pdfbox/examples/pdmodel/ShowJustifiedFormattedBook.java) example).
 
 ## [PDFBox-Complete](https://github.com/nilostolte/PDFBox/tree/main/PDFBox-Complete)
 
