@@ -4,6 +4,10 @@ The [**Apache PDFBox library**](https://pdfbox.apache.org) is an open source Jav
 
 The project in this repository offers several versions of [PDFBox](https://pdfbox.apache.org) **source code** that can be directly compiled with Eclipse without using Maven. The source code version used here is `pdfbox-2.0.23`. [The complete version](https://github.com/nilostolte/PDFBox/tree/main/PDFBox-Complete) (**PDFBox-Complete**) is a complete unmodified PDFBox with all packages. The other versions, which are in other repositories for convenience, are modified versions offering more capabilities and generally for more specific uses.
 
+## [PDFBox-Compact](https://github.com/nilostolte/PDFBox/tree/main/PDFBox-Compact)
+
+This is a compact version of PDFBox that is ready for compilation and execution. It contains new packages, notably to produce formateed PDF files from text files.
+
 ## [PDFBox-Complete](https://github.com/nilostolte/PDFBox/tree/main/PDFBox-Complete)
 
 This is a complete unmodifed version of PDFBox that is ready for compilation and execution. It contains all necessary packages, where some of them are normally not included in PDFBox source code (Example: `org.bouncycastle`). If you are not using encryption, you can delete `bouncycastle` or simply not copy it to your project. However, you should also delete the examples that use it in order to compile the source code.
