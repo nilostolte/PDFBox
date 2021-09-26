@@ -4,7 +4,7 @@ The [**Apache PDFBox library**](https://pdfbox.apache.org) is an open source Jav
 
 The project in this repository offers several versions of [PDFBox](https://pdfbox.apache.org) **source code** that can be directly compiled with Eclipse without using Maven. The source code version used here is `pdfbox-2.0.23`. [The complete version](https://github.com/nilostolte/PDFBox/tree/main/PDFBox-Complete) (**PDFBox-Complete**) is a complete unmodified PDFBox with all packages. The other versions, which are in other repositories for convenience, are modified versions offering more capabilities and generally for more specific uses.
 
-## [PDFBox-Compact](https://github.com/nilostolte/PDFBox/tree/main/PDFBoxCompact)
+## [PDFBoxCompact](https://github.com/nilostolte/PDFBox/tree/main/PDFBoxCompact)
 
 This is a compact version of PDFBox that is ready for compilation and execution. It contains new packages, notably to produce formateed PDF files from text files. [ShowJustifiedFormattedBook](https://github.com/nilostolte/PDFBox/blob/main/PDFBoxCompact/src/org/apache/pdfbox/examples/pdmodel/ShowJustifiedFormattedBook.java) example shows how to proceed and it generates file:
 
